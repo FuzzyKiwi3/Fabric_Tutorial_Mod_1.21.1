@@ -28,15 +28,11 @@ public class LightningHammerItem extends Item {
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         World world = attacker.getWorld();
-        double xPos = target.getX();
-        double yPos = target.getY();
-        double zPos = target.getZ();
-
-        if(!world.isClient) {
-            LightningEntity lightning = new LightningEntity(EntityType.LIGHTNING_BOLT, world);
-            lightning.setPos(xPos, yPos, zPos);
-            world.spawnEntity(lightning);
-        }
+        int xPos = ((int) target.getX());
+        int yPos = ((int) target.getY());
+        int zPos = ((int) target.getZ());
+        BlockPos blockPos = new BlockPos(xPos, yPos, zPos);
+        createLightning(world, blockPos);
 
         stack.damage(1, ((ServerWorld) world), ((ServerPlayerEntity) attacker),
                 item -> attacker.sendEquipmentBreakStatus(item, EquipmentSlot.MAINHAND));
@@ -60,6 +56,8 @@ public class LightningHammerItem extends Item {
 
 
     private static void createLightning(World world, BlockPos strikePos) {
+        /* I tried to add a heightmap here so strikes don't go through blocks,
+           but passable blocks like grass messed up the other functions */
         LightningEntity lightning = new LightningEntity(EntityType.LIGHTNING_BOLT, world);
         lightning.setPos(
                 strikePos.getX() + 0.5,

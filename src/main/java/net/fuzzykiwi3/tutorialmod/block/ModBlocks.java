@@ -34,7 +34,7 @@ public class ModBlocks {
 
     public static final Block MAGIC_BLOCK = registerBlock("magic_block",
             new MagicBlock(AbstractBlock.Settings.create().strength(1f)
-                    .requiresTool().sounds(BlockSoundGroup.SAND)));
+                    .requiresTool()));
 
 
 
