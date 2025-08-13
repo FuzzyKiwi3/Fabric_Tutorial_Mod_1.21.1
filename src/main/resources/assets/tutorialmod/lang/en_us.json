@@ -15,6 +15,8 @@
   "item.tutorialmod.pink_garnet_chestplate": "Pink Garnet Chestplate",
   "item.tutorialmod.pink_garnet_leggings": "Pink Garnet Leggings",
   "item.tutorialmod.pink_garnet_boots": "Pink Garnet Boots",
+  "item.tutorialmod.pink_garnet_horse_armor": "Pink Garnet Horse Armor",
+  "item.tutorialmod.kaupen_armor_trim_smithing_template": "Kaupen Smithing Template",
 
   "block.tutorialmod.pink_garnet_block": "Block of Pink Garnet",
   "block.tutorialmod.raw_pink_garnet_block": "Block of Raw Pink Garnet",
@@ -41,5 +43,8 @@
   "tooltip.tutorialmod.cauliflower.tooltip": "This is delicious!",
   "tooltip.tutorialmod.lightning_hammer": "Press §eShift§r for more Information",
   "tooltip.tutorialmod.lightning_hammer.shift_down.tooltip1": "This item strikes with the wrath of §blightning§r!",
-  "tooltip.tutorialmod.lightning_hammer.shift_down.tooltip2": "§eRight Click§r to strike a block"
+  "tooltip.tutorialmod.lightning_hammer.shift_down.tooltip2": "§eRight Click§r to strike a block",
+
+  "trim_material.tutorialmod.pink_garnet": "Pink Garnet Material",
+  "trim_pattern.tutorialmod.kaupen": "Kaupen Armor Pattern"
 }
