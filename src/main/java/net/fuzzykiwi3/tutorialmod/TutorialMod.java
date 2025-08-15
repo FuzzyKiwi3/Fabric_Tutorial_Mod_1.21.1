@@ -2,6 +2,7 @@ package net.fuzzykiwi3.tutorialmod;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fuzzykiwi3.tutorialmod.block.ModBlocks;
@@ -9,8 +10,16 @@ import net.fuzzykiwi3.tutorialmod.component.ModDataComponentTypes;
 import net.fuzzykiwi3.tutorialmod.item.ModItemGroups;
 import net.fuzzykiwi3.tutorialmod.item.ModItems;
 import net.fuzzykiwi3.tutorialmod.util.HammerUsageEvent;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.passive.SheepEntity;
+import net.minecraft.item.Items;
+import net.minecraft.text.Text;
+import net.minecraft.util.ActionResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import static org.apache.logging.log4j.util.Strings.concat;
 
 public class TutorialMod implements ModInitializer {
 	public static final String MOD_ID = "tutorialmod";
@@ -29,5 +38,18 @@ public class TutorialMod implements ModInitializer {
         FuelRegistry.INSTANCE.add(ModItems.STARLIGHT_ASHES, 600);
 
         PlayerBlockBreakEvents.BEFORE.register(new HammerUsageEvent());
+        AttackEntityCallback.EVENT.register((player, world, hand, entity, hitResult) -> {
+            if(entity instanceof SheepEntity sheepEntity && !world.isClient) {
+                if(player.getMainHandStack().getItem() == Items.END_ROD) {
+                    player.sendMessage(Text.literal(player.getName().getString() + " just hit a sheep with an END ROD! YOU SICK FRICK!"));
+                    player.getMainHandStack().decrement(1);
+                    sheepEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 600, 6));
+                }
+
+                return ActionResult.PASS;
+            }
+
+            return ActionResult.PASS;
+        });
 	}
 }
