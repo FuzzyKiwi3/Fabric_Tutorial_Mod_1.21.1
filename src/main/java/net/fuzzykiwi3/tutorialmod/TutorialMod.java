@@ -9,6 +9,7 @@ import net.fuzzykiwi3.tutorialmod.block.ModBlocks;
 import net.fuzzykiwi3.tutorialmod.component.ModDataComponentTypes;
 import net.fuzzykiwi3.tutorialmod.item.ModItemGroups;
 import net.fuzzykiwi3.tutorialmod.item.ModItems;
+import net.fuzzykiwi3.tutorialmod.sound.ModSounds;
 import net.fuzzykiwi3.tutorialmod.util.HammerUsageEvent;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -33,6 +34,8 @@ public class TutorialMod implements ModInitializer {
         ModBlocks.registerModBlocks();
 
         ModDataComponentTypes.registerDataComponentTypes();
+
+        ModSounds.registerSounds();
 
         // If you want to add more fuel items it is suggested to make a class method like above.
         FuelRegistry.INSTANCE.add(ModItems.STARLIGHT_ASHES, 600);
