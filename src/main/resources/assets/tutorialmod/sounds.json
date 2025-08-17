@@ -42,5 +42,22 @@
         "stream": true
       }
     ]
+  },
+  "megalovania": {
+    "sounds": [
+      {
+        "name": "tutorialmod:megalovania",
+        "stream": true,
+        "volume": 0.25
+      }
+    ]
+  },
+  "devourer_of_gods": {
+    "sounds": [
+      {
+        "name": "tutorialmod:devourer_of_gods",
+        "stream": true
+      }
+    ]
   }
 }

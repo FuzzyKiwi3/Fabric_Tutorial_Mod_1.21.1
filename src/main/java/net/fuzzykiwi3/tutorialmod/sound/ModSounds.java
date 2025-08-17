@@ -25,6 +25,14 @@ public class ModSounds {
     public static final SoundEvent BAR_BRAWL = registerSoundEvent("bar_brawl");
     public static final RegistryKey<JukeboxSong> BAR_BRAWL_KEY =
             RegistryKey.of(RegistryKeys.JUKEBOX_SONG, Identifier.of(TutorialMod.MOD_ID, "bar_brawl"));
+    public static final SoundEvent MEGALOVANIA = registerSoundEvent("megalovania");
+    public static final RegistryKey<JukeboxSong> MEGALOVANIA_KEY =
+            RegistryKey.of(RegistryKeys.JUKEBOX_SONG, Identifier.of(TutorialMod.MOD_ID, "megalovania"));
+    public static final SoundEvent DEVOURER_OF_GODS = registerSoundEvent("devourer_of_gods");
+    public static final RegistryKey<JukeboxSong> DEVOURER_OF_GODS_KEY =
+            RegistryKey.of(RegistryKeys.JUKEBOX_SONG, Identifier.of(TutorialMod.MOD_ID, "devourer_of_gods"));
+
+    // Remember to edit the sounds.json file
 
 
     private static SoundEvent registerSoundEvent(String name) {

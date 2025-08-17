@@ -78,6 +78,10 @@ public class ModItems {
 
     public static final Item BAR_BRAWL_MUSIC_DISC = registerItem("bar_brawl_music_disc",
             new Item(new Item.Settings().jukeboxPlayable(ModSounds.BAR_BRAWL_KEY).maxCount(1)));
+    public static final Item MEGALOVANIA_MUSIC_DISC = registerItem("megalovania_music_disc",
+            new Item(new Item.Settings().jukeboxPlayable(ModSounds.MEGALOVANIA_KEY).maxCount(1)));
+    public static final Item DEVOURER_OF_GODS_MUSIC_DISC = registerItem("devourer_of_gods_music_disc",
+            new Item(new Item.Settings().jukeboxPlayable(ModSounds.DEVOURER_OF_GODS_KEY).maxCount(1)));
 
 
     private static Item registerItem(String name, Item item) {
